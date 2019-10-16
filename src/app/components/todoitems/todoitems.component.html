@@ -1,7 +1,14 @@
 <div [ngClass]="setClasses()">
-    <input (change)="onToggle(todo)" type="checkbox"/>
-    <p>{{ todo.title }}</p>
-    <button (click)="onClick(todo)" class="del">X</button>
+    <p>
+        <input
+        (change)="onToggle(todo)"
+        type="checkbox"
+        id="{{ todo.id }}"
+        [checked]="todo.completed"
+        />
+        <label for="{{ todo.id }}">
+        {{ todo.title }}
+        </label>
+        <button (click)="onClick(todo)" class="del">X</button>
+    </p>
 </div>
-
-
